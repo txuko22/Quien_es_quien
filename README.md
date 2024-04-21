@@ -1,7 +1,22 @@
 # **Quién es quién**
 Práctica del curso de especialización de IA y Big Data - IES de Teis (Bruno Álvarez Darriba)
 
-Este proyecto consiste en establecer una estrategia propia para poder resolver una partida del juego conocido como **"Quién es quién"**, usando *Prolog* y *Python*. Prolog será utilizado para poder establecer la base de datos que vamos a usar a la hora de simular la partida, en la cual se establecerán los distintos personajes del panel y sus correspondientes características diferenciadoras. Python será empleado para todo el desarrollo y ejecución de los casos test (pytest).
+Este proyecto consiste en establecer una estrategia propia para poder resolver una partida del juego conocido como **"Quién es quién"**, usando *Prolog* y *Python*. Prolog será utilizado para poder establecer la base de datos, en la cual se establecerán los distintos personajes del panel y sus correspondientes características diferenciadoras, y también para desarrollar todo el código que permita simular la ejecución del juego. Python será empleado para todo el desarrollo y ejecución de los casos test (pytest).
+
+ * [¿**"Quién es quién"** juego de *Optimización* o *Búsqueda*?](#¿"Quién-es-quién"-juego-de-Optimización-o-Búsqueda?)
+
+ * [Entorno del agente](#Entorno-del-agente)
+
+ * [Algoritmo](#Algoritmo)
+
+ * [Estrutura del agente](#Estructura-del-agente)
+ 
+ * [Uso del paradigma de programación lógica](#Uso-del-paradigma-de-programación-lógica)
+
+ * [Prolog para la representación de la base de datos](#Prolog-para-la-representación-de-la-base-de-datos)
+
+ * [Bibliografía](#Bibliografía)
+
 
 ## ¿**"Quién es quién"** juego de *Optimización* o *Búsqueda*?
 Para poder primero decidir y defender una postura acerca de que tipo de problema es este que vamos a tratar, vamos a centrarnos en entender de que se trata cada uno de los problemas mencionados en el enunciado y sus principales diferencias: 
@@ -59,6 +74,21 @@ Este juego es un buen ejemplo de problema para ser resuelto mediante el uso de l
 
 - Tiene unas reglas claras y definidas, lo cual es perfecto para el uso de reglas lógicas para modelar su funcionamiento. 
 
+- Las preguntas se formulan en términos de características y relaciones entre los personajes, estas se pueden representar fácilmente mediante predicados y relaciones en lógica.
 
+- El juego implica sacar conclusiones a partir de las respuestas a las preguntas planteadas por el otro agente. Por ejemplo, si se pregunta: "¿Tu personaje tiene el pelo negro?" y el otro agente recibe te da una respuesta negativa, entonces se puede deducir que todos los personajes con pelo negro pueden ser descartados de las opciones posibles. Dichas deducciones se expresan en la programación lógica mediante reglas.
+
+- Toda la información sobre las características de cada personaje se puede almacenar y expresar mediante el uso de reglas lógicas también, ya que el propio paradigma es capaz de analizar, razonar y tratar dicha información para responder cualquier tipo de pregunta a cerca de la misma (devolviendo valores booleanos, personajes que cumplen las preguntas formuladas, listas...).
+
+- Permite también aumentar las características y/o los personajes sin ningún tipo de problema de forma fácil e intuitiva. Aparte de que también es una buena opción para tratar con una cantidad razonable de información.
+
+
+## Prolog para la representación de la base de datos
+
+
+## Bibliografía
+@dfleta. "quienesquien". _github_. https://github.com/dfleta/quienesquien.git
+
+Inteligencia Artificial un enfoque moderno, 2da Ed (Stuart Russell y Peter Norvig)
 
 
