@@ -43,7 +43,7 @@ Entorno de tareas | Completamente / parcialmente Observable| Agentes | Determini
 
 - **Determinista:** las preguntas que haces al otro agente van a tener respuestas concretas de si o no. No hay incertidumbre a la hora de responderlas.
 
-- 
+- **Secuencial:** la decisión de hacer una pregunta u otra puede cambiar y afectar decisiones futuras. Por ejemplo, en función de la pregunta que se haga, el tablero cambia a un número mayor o menor de personajes. Por lo que cada iteracción con el otro agente va a depender de la anterior. Aparte de lo dicho, es un juego que se lleva a cabo de forma secuencial a la hora de hacer las preguntas, ya existen turnos para que cada agente las lleve a cabo.
 
 - **Estático:** es estático ya que a la hora de estar pensando la pregunta que le vas a hacer al otro agente ni el entorno, ni el tablero ni el personaje a adivinar cambia.
 
@@ -54,19 +54,18 @@ Entorno de tareas | Completamente / parcialmente Observable| Agentes | Determini
 
 
 
-
-
-
-
 ## Estructura del agente
+El tipo de agente escogido en este caso es un agente basado en objetivos. Esta elección fue tomada por varias razones:
 
+1. En este juego el objetivo está totalmente claro, que es identificar el personaje del otro agente "contra" el que estamos jugando (recordemos que no es un agente adversario). Por lo que no es necesario que considere otros objetivos aparte de este, ya que sino aumentaría su complejidad.
 
+2. Maneja mejor la incertidumbre en comparación con otros modelos de agente (basado en modelos y basado en utilidad), ya que se centra en un objetivo único.
 
+3. Es más fácil de entender e implementar, ya que no existen funciones como la de utilidad, quizás difícil de encontrar y entender en algunos casos.
 
+4. Es bastante flexible para poder usarlo en otros ámbitos o juegos. El cambio pasaría solo por cambiar el objetivo al que se prentende llegar.
 
-
-
-
+![Modelo agente basado en objetivos](./doc/Modelo_agente.png)
 
 
 ## Uso del paradigma de programación lógica
