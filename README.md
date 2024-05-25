@@ -33,7 +33,7 @@ Como podemos observar, el problema con el que nos encontramos en el **"Quién es
 
 Entorno de tareas | Completamente / parcialmente Observable| Agentes | Determinista / Estocástico | Episódico / Secuencial | Estático / Dinámico | Discreto / Continuo
 :---: | :---: | :---: | :---: | :---: | :---: | :---: |
- Quién es quién | Parcialmente observable | Multiagente | Determinista | - | Estático | Discreto |
+ Quién es quién | Parcialmente observable | Multiagente | Determinista | Secuencial | Estático | Discreto |
 
  <br>
  
