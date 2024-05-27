@@ -83,7 +83,10 @@ Este juego es un buen ejemplo de problema para ser resuelto mediante el uso de l
 
 
 ## Prolog para la representación de la base de datos
+### EXPLICAR PORQUE USAMOS NH EN VEZ DE Ñ EN LA BBDD
 
+## INSTALACIÓN
+### EXPLICAR LA DESCARGA DEL REPOSITORIO
 
 ## Bibliografía
 @dfleta. "quienesquien". _github_. https://github.com/dfleta/quienesquien.git
