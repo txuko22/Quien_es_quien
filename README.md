@@ -15,6 +15,8 @@ Este proyecto consiste en establecer una estrategia propia para poder resolver u
 
  * [Prolog para la representación de la base de datos](#Prolog-para-la-representación-de-la-base-de-datos)
 
+ * [Instalación y ejecución](#Instalación-y-ejecución) 
+
  * [Bibliografía](#Bibliografía)
 
 
@@ -50,7 +52,7 @@ Entorno de tareas | Completamente / parcialmente Observable| Agentes | Determini
 - **Discreto:** los agentes tienen un número finito de personajes en su tablero. Al igual que las caracteríticas de los personajes y las respuestas de las preguntas tienen un número finito de posibilidades.
 
 ## Algoritmo
-
+Tras analizar las distintas características de los personajes y sus frecuencias, me di cuenta que había varias de ellas que tenían una frecuencia mayor a las demás y pensé que sería buena idea coger esas. Después caí en que en el caso de que el personaje no tuviese esa característica que más se repite sería un muy buen movimiento, pero sería uno muy poco eficiente en caso contrario. Por lo que decidí coger la caracterítica que ocupa la posición n (dividir la longitud de la lista de características entre dos) para así coger una característica que, sea la respuesta si o no, me quite un número parecido de personajes del tablero. 
 
 
 
@@ -83,10 +85,20 @@ Este juego es un buen ejemplo de problema para ser resuelto mediante el uso de l
 
 
 ## Prolog para la representación de la base de datos
-### EXPLICAR PORQUE USAMOS NH EN VEZ DE Ñ EN LA BBDD
+Para la represtación de la base de datos elegí un archivo .pl (bbdd.pl), el cuál guarda la información de la misma gracias a las reglas de prolog. Cada una de ellas (personaje()) está formada por el nombre del personaje y una lista de las características por las cuáles podemos definir y diferenciar al mismo de los demás personajes del tablero.
 
-## INSTALACIÓN
-### EXPLICAR LA DESCARGA DEL REPOSITORIO
+A la hora de definir las características, aquellas que contenían la letra "ñ" decidí cambiarla por el par "nh". Esto es debido ya que a la hora de tratar con la base de datos (realizar querys de la misma) me daba problemas con esa letra ya que no se me estaba guardando bien la codificación del archivo .pl
+
+Al final es un cambio mínimo que no afecta en nada ya que el propio programa siguiendo el algoritmo comentado anteriormente coge las características de la base de datos y usa las mismas palabras pero solo con ese pequeño cambio.
+
+## Instalación y ejecución 
+- Creamos un nuevo entorno de trabajo que cuente con python 3.12 (ya que fue la versión usada para la producción y testeo del código):
+`conda create -n nombre_del_entorno python=3.12.3`
+- Nos situamos en el entorno creado:
+`conda activate nombre_del_entorno`
+- Instalamos las versiones de los paquetes presentes en el archivo de *requirements.txt*, mediante el comando: `pip install -r requirements.txt`
+- Ejecutamos luego de eso este comando: `pip install git+https://github.com/yuce/pyswip@59016e0841f56177d1b18ec08fd9b67792bd0a97`
+- Ejecutamos el proyecto.
 
 ## Bibliografía
 @dfleta. "quienesquien". _github_. https://github.com/dfleta/quienesquien.git
