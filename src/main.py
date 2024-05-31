@@ -3,27 +3,26 @@ from collections import Counter
 import random
 
 prolog = Prolog()
-#prolog.consult("bbdd.pl")
-prolog.consult("C:/Users/Bruno/Desktop/IA_BD/MIA/Quien_es_quien/src/bbdd.pl")
+prolog.consult("src/bbdd.pl")
 
 personajes = []
 personajes_restantes = []
 todas_las_caracteristicas = []
 
-# Imprimimos la lista de personajes que se nos pasa por parámetro (nombre y características).
+
 def tablero(lista_personajes):
     for personaje in lista_personajes:
         print(f"{personaje["Nombre"]}: {personaje["Caracteristicas"]}")
 
 
-# Esta función nos devuelve un personaje aleatorio del tablero (con sus respectivas caracteristicas), el cuál va a ser el que deberemos adivinar.
+
 def eleccion_personaje():
     resultado_query = list(prolog.query("personaje(Nombre, Caracteristicas)"))
     personaje = random.choice(resultado_query)
 
     return personaje
 
-# Devuelve la característica a preguntar siguiendo nuestro algoritmo (explicado en el README.md).
+
 def caracteristica(lista):
     contador_caracteristicas = 0
     todas_las_caracteristicas = []
@@ -37,7 +36,7 @@ def caracteristica(lista):
 
     return contador_caracteristicas[int(len(contador_caracteristicas)/2)][0]
 
-# Devuelve un booleano sobre si el personaje que se tiene que adivinar tiene la caracteristica que se le pasa o no.
+
 def pregunta(personaje_secreto, caract):
     if caract in personaje_secreto["Caracteristicas"]:
         return True
@@ -79,10 +78,10 @@ def main():
                 if caracteristica_a_preguntar not in p['Caracteristicas']:
                     personajes_temp.append(p)
 
-        # Imprimos la nueva lista resultante después de realizar la pregunta
         resultado_query = personajes_temp
         preguntas += 1
 
+    # Imprimimos el personaje que queda y que debería ser el mismo al personaje objetivo, también mostramos el número de preguntas que hemos necesitado para adivinarlo.
     print(f"El personaje es: {resultado_query}")
     print(f"Número de preguntas: {preguntas}")
 
