@@ -23,7 +23,7 @@ Este proyecto consiste en establecer una estrategia propia para poder resolver u
 ## ¿**"Quién es quién"** juego de *Optimización* o *Búsqueda*?
 Para poder primero decidir y defender una postura acerca de que tipo de problema es este que vamos a tratar, vamos a centrarnos en entender de que se trata cada uno de los problemas mencionados en el enunciado y sus principales diferencias: 
 
-- **Problemas de optimización**: estos hacen referencia a aquellos problemas cuyo objetivo es encontrar el mejor estado según una función objetivo. En estos casos, no hay ningún tipo de \<test objetivo> ni tampoco \<coste de camino>.
+- **Problemas de optimización**: estos hacen referencia a aquellos problemas cuyo objetivo es encontrar el mejor estado según una función objetivo. En estos casos, no hay ningún tipo de \<coste de camino>.
 Lo único importante es la configuración o estado final.
 
 - **Problemas de búsquedas**: estos sin embargo hacen referencia a aquellos problemas los cuales han sido diseñados para explorar de manera sistemática los espacios de búsqueda, manteniendo en memoria uno o más caminos registrando los puntos que hayan sido explorados con anterioridad. Estos tipos de búsquedas son usados cuando importa el camino al objetivo. 
@@ -45,14 +45,14 @@ Entorno de tareas | Completamente / parcialmente Observable| Agentes | Determini
 
 - **Determinista:** las preguntas que haces al otro agente van a tener respuestas concretas de si o no. No hay incertidumbre a la hora de responderlas.
 
-- **Secuencial:** la decisión de hacer una pregunta u otra puede cambiar y afectar decisiones futuras. Por ejemplo, en función de la pregunta que se haga, el tablero cambia a un número mayor o menor de personajes. Por lo que cada iteracción con el otro agente va a depender de la anterior. Aparte de lo dicho, es un juego que se lleva a cabo de forma secuencial a la hora de hacer las preguntas, ya existen turnos para que cada agente las lleve a cabo.
+- **Secuencial:** la decisión de hacer una pregunta u otra puede cambiar y afectar decisiones futuras. Por ejemplo, en función de la pregunta que se haga, el tablero cambia a un número mayor o menor de personajes. Por lo que cada iteracción con el otro agente va a depender de la anterior. Aparte de lo dicho, es un juego que se lleva a cabo de forma secuencial a la hora de hacer las preguntas, existen turnos para que cada agente las lleve a cabo.
 
 - **Estático:** es estático ya que a la hora de estar pensando la pregunta que le vas a hacer al otro agente ni el entorno, ni el tablero ni el personaje a adivinar cambia.
 
 - **Discreto:** los agentes tienen un número finito de personajes en su tablero. Al igual que las caracteríticas de los personajes y las respuestas de las preguntas tienen un número finito de posibilidades.
 
 ## Algoritmo
-Tras analizar las distintas características de los personajes y sus frecuencias, me di cuenta que había varias de ellas que tenían una frecuencia mayor a las demás y pensé que sería buena idea coger esas. Después caí en que en el caso de que el personaje no tuviese esa característica que más se repite sería un muy buen movimiento, pero sería uno muy poco eficiente en caso contrario. Por lo que decidí coger la caracterítica que ocupa la posición n (dividir la longitud de la lista de características entre dos) para así coger una característica que, sea la respuesta si o no, me quite un número parecido de personajes del tablero. 
+Tras analizar las distintas características de los personajes y sus frecuencias, me di cuenta que había varias de ellas que tenían una frecuencia mayor a las demás y pensé que sería buena idea coger esas. Después caí en que en el caso de que el personaje no tuviese esa característica que más se repite sería un muy buen movimiento, pero sería uno muy poco eficiente en caso contrario. Por lo que decidí coger la característica que ocupa la posición n (dividir la longitud de la lista de características entre dos) para así coger una característica que, sea la respuesta si o no, me quite un número parecido de personajes del tablero. 
 
 
 
