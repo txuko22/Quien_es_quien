@@ -12,7 +12,7 @@ todas_las_caracteristicas = []
 
 def tablero(lista_personajes):
     for personaje in lista_personajes:
-        print(f"{personaje["Nombre"]}: {personaje["Caracteristicas"]}")
+        print(f'{personaje["Nombre"]}: {personaje["Caracteristicas"]}')
 
 
 
@@ -48,7 +48,7 @@ def main():
 
     # Obtenemos el personaje a adivinar.
     personaje_a_adivinar = eleccion_personaje()
-    print(f"El personaje a adivinar es: {personaje_a_adivinar["Nombre"]}({personaje_a_adivinar["Caracteristicas"]})")
+    print(f'El personaje a adivinar es: {personaje_a_adivinar["Nombre"]}({personaje_a_adivinar["Caracteristicas"]})')
 
     # Realizamos una consulta prolog para sacar todos los personajes del tablero según iniciamos la partida y los imprimimos.
     resultado_query = list(prolog.query("personaje(Nombre,Caracteristicas)"))
